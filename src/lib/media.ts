@@ -45,7 +45,7 @@ export const beelden = {
     "Familie tijdens een feest in gouden avondlicht, ongeposeerd, warme tonen",
   ),
   heroPortret: b(
-    "/beelden/hero-portret.svg",
+    ''/beelden/foto.png'',
     1200 / 1600,
     "Portret van een bruidspaar tijdens het gouden uur",
     "Verticaal portret van een paar tijdens het gouden uur, zachte achtergrond",
