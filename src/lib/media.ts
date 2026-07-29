@@ -39,13 +39,13 @@ const b = (
 
 export const beelden = {
   hero: b(
-    { src: "/beelden/onze-hero-foto.jpg",}
+   public/beelden/Foto.png
     1920 / 1200,
     "Een familie tijdens een feest, gefotografeerd in warm avondlicht",
     "Familie tijdens een feest in gouden avondlicht, ongeposeerd, warme tonen",
   ),
   heroPortret: b(
-    ''/beelden/foto.png'',
+    public/beelden/Foto.png
     1200 / 1600,
     "Portret van een bruidspaar tijdens het gouden uur",
     "Verticaal portret van een paar tijdens het gouden uur, zachte achtergrond",
