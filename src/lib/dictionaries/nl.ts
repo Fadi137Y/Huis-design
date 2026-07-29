@@ -215,7 +215,7 @@ export const nl = {
       items: [
         {
           naam: "Foto",
-          prijs: "295",
+          prijs: "850",
           eenheid: "vanaf",
           samenvatting: "Voor een viering of een halve dag.",
           punten: [
@@ -230,7 +230,7 @@ export const nl = {
         },
         {
           naam: "Foto & film",
-          prijs: "545",
+          prijs: "1500",
           eenheid: "vanaf",
           samenvatting: "Onze meest gekozen combinatie.",
           punten: [
@@ -246,7 +246,7 @@ export const nl = {
         },
         {
           naam: "Film",
-          prijs: "345",
+          prijs: "850",
           eenheid: "vanaf",
           samenvatting: "Als beweging en geluid het verhaal dragen.",
           punten: [
