@@ -39,7 +39,7 @@ const b = (
 
 export const beelden = {
   hero: b(
-    "/beelden/foto.png,
+    { src: "/beelden/onze-hero-foto.jpg",}
     1920 / 1200,
     "Een familie tijdens een feest, gefotografeerd in warm avondlicht",
     "Familie tijdens een feest in gouden avondlicht, ongeposeerd, warme tonen",
