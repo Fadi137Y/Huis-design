@@ -84,12 +84,26 @@ in je browser.
 
 ## De site online
 
-De site staat live op GitHub Pages en publiceert zichzelf. Elke keer dat er
-iets wijzigt, bouwt GitHub de site opnieuw en zet hem online. Dat regelt
-`.github/workflows/publiceer.yml`.
+### Eenmalig aanzetten
 
-Je kunt de publicatie volgen op het tabblad **Actions** van deze repository.
-Daar kun je hem ook met de hand starten via *Run workflow*.
+GitHub Pages moet één keer met de hand worden aangezet. Een workflow mag dat
+niet zelf doen, dus dit is de enige stap die je zelf moet uitvoeren:
+
+> **Settings** → **Pages** → onder *Build and deployment* zet je
+> **Source** op **GitHub Actions**
+
+Daarna: ga naar het tabblad **Actions**, kies *Publiceer de site* en klik op
+**Run workflow**. Na ongeveer twee minuten staat de site online op:
+
+```
+https://fadi137y.github.io/Huis-design/
+```
+
+### Daarna gaat het vanzelf
+
+Elke wijziging die je pusht bouwt en publiceert zichzelf. Dat regelt
+`.github/workflows/publiceer.yml`. Je kunt het volgen op het tabblad
+**Actions**.
 
 ### Een eigen domein koppelen
 

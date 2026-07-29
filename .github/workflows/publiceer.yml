@@ -31,15 +31,15 @@ jobs:
       - name: Node installeren
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
           cache: npm
 
+      # Let op: dit werkt pas nadat GitHub Pages één keer met de hand is
+      # aangezet, via Settings -> Pages -> Source: GitHub Actions.
+      # Een workflow mag dat namelijk niet zelf doen.
       - name: Pages instellen
         id: pages
         uses: actions/configure-pages@v5
-        with:
-          # Zet GitHub Pages aan als dat nog niet gedaan is.
-          enablement: true
 
       - name: Pakketten installeren
         run: npm ci
