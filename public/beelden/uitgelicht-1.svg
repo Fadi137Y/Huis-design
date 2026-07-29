@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1050" width="1400" height="1050" role="img" preserveAspectRatio="xMidYMid slice">
+  <defs>
+  <radialGradient id="g0" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#D6AC9B" stop-opacity="0.77"/>
+    <stop offset="100%" stop-color="#D6AC9B" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="g1" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#5C4038" stop-opacity="0.47"/>
+    <stop offset="100%" stop-color="#5C4038" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="g2" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#A97A6A" stop-opacity="0.73"/>
+    <stop offset="100%" stop-color="#A97A6A" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="g3" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#EBD5CB" stop-opacity="0.55"/>
+    <stop offset="100%" stop-color="#EBD5CB" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="g4" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#A97A6A" stop-opacity="0.82"/>
+    <stop offset="100%" stop-color="#A97A6A" stop-opacity="0"/>
+  </radialGradient>
+    <linearGradient id="streep" x1="34%" y1="3%" x2="66%" y2="97%">
+      <stop offset="0%" stop-color="#F8EFE9" stop-opacity="0"/>
+      <stop offset="45%" stop-color="#EBD5CB" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#A97A6A" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="vignet" cx="50%" cy="45%" r="72%">
+      <stop offset="55%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#241C13" stop-opacity="0.38"/>
+    </radialGradient>
+    <filter id="korrel" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="21" result="ruis"/>
+      <feColorMatrix type="saturate" values="0" in="ruis" result="grijs"/>
+      <feComponentTransfer in="grijs" result="korrel">
+        <feFuncA type="linear" slope="0.16"/>
+      </feComponentTransfer>
+    </filter>
+    <filter id="zacht" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="49"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="1050" fill="#F8EFE9"/>
+  <g filter="url(#zacht)">
+  <ellipse cx="551" cy="413" rx="565" ry="619" fill="url(#g0)"/>
+  <ellipse cx="1260" cy="542" rx="703" ry="423" fill="url(#g1)"/>
+  <ellipse cx="1488" cy="427" rx="481" ry="511" fill="url(#g2)"/>
+  <ellipse cx="585" cy="1201" rx="867" ry="712" fill="url(#g3)"/>
+  <ellipse cx="773" cy="790" rx="792" ry="484" fill="url(#g4)"/>
+  </g>
+  <rect width="1400" height="1050" fill="url(#streep)"/>
+  <circle cx="175" cy="974" r="47" fill="#F8EFE9" opacity="0.15"/>
+  <circle cx="562" cy="159" r="61" fill="#EBD5CB" opacity="0.14"/>
+  <circle cx="104" cy="207" r="62" fill="#F8EFE9" opacity="0.19"/>
+  <circle cx="1057" cy="801" r="56" fill="#D6AC9B" opacity="0.18"/>
+  <circle cx="784" cy="587" r="43" fill="#F8EFE9" opacity="0.11"/>
+  <circle cx="1243" cy="430" r="41" fill="#F8EFE9" opacity="0.13"/>
+  <circle cx="445" cy="509" r="35" fill="#EBD5CB" opacity="0.19"/>
+  <circle cx="1005" cy="1042" r="50" fill="#F8EFE9" opacity="0.14"/>
+  <circle cx="839" cy="548" r="55" fill="#D6AC9B" opacity="0.11"/>
+  <circle cx="158" cy="703" r="59" fill="#D6AC9B" opacity="0.19"/>
+  <circle cx="485" cy="627" r="37" fill="#EBD5CB" opacity="0.08"/>
+  <circle cx="1292" cy="183" r="46" fill="#F8EFE9" opacity="0.09"/>
+  <circle cx="946" cy="944" r="81" fill="#F8EFE9" opacity="0.13"/>
+  <circle cx="1346" cy="620" r="76" fill="#F8EFE9" opacity="0.14"/>
+  <circle cx="934" cy="983" r="33" fill="#EBD5CB" opacity="0.15"/>
+  <circle cx="1127" cy="813" r="49" fill="#EBD5CB" opacity="0.19"/>
+  <circle cx="1195" cy="691" r="19" fill="#F8EFE9" opacity="0.10"/>
+  <circle cx="97" cy="355" r="77" fill="#EBD5CB" opacity="0.22"/>
+  <circle cx="1020" cy="52" r="26" fill="#D6AC9B" opacity="0.16"/>
+  <circle cx="671" cy="1000" r="77" fill="#D6AC9B" opacity="0.12"/>
+  <circle cx="1234" cy="631" r="45" fill="#F8EFE9" opacity="0.15"/>
+  <circle cx="431" cy="561" r="35" fill="#EBD5CB" opacity="0.18"/>
+  <circle cx="535" cy="132" r="65" fill="#F8EFE9" opacity="0.10"/>
+  <circle cx="901" cy="894" r="56" fill="#EBD5CB" opacity="0.10"/>
+  <circle cx="1052" cy="853" r="26" fill="#EBD5CB" opacity="0.08"/>
+  <rect width="1400" height="1050" fill="url(#vignet)"/>
+  <rect width="1400" height="1050" filter="url(#korrel)" opacity="0.55"/>
+</svg>
