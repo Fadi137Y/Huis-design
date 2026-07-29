@@ -84,22 +84,11 @@ in je browser.
 
 ## De site online
 
-### Eenmalig aanzetten
-
-GitHub Pages moet één keer met de hand worden aangezet. Een workflow mag dat
-niet zelf doen, dus dit is de enige stap die je zelf moet uitvoeren:
-
-> **Settings** → **Pages** → onder *Build and deployment* zet je
-> **Source** op **GitHub Actions**
-
-Daarna: ga naar het tabblad **Actions**, kies *Publiceer de site* en klik op
-**Run workflow**. Na ongeveer twee minuten staat de site online op:
+De site staat live op:
 
 ```
 https://fadi137y.github.io/Huis-design/
 ```
-
-### Daarna gaat het vanzelf
 
 Elke wijziging die je pusht bouwt en publiceert zichzelf. Dat regelt
 `.github/workflows/publiceer.yml`. Je kunt het volgen op het tabblad
@@ -107,7 +96,7 @@ Elke wijziging die je pusht bouwt en publiceert zichzelf. Dat regelt
 
 ### Een eigen domein koppelen
 
-1. Koop een domein (bijvoorbeeld `f2studio.nl`)
+1. Koop een domein, bijvoorbeeld `f2studio.nl`
 2. Zet bij je domeinprovider deze DNS-regels klaar:
 
    | Type | Naam | Waarde |
@@ -116,13 +105,27 @@ Elke wijziging die je pusht bouwt en publiceert zichzelf. Dat regelt
    | A | @ | 185.199.109.153 |
    | A | @ | 185.199.110.153 |
    | A | @ | 185.199.111.153 |
+   | AAAA | @ | 2606:50c0:8000::153 |
+   | AAAA | @ | 2606:50c0:8001::153 |
+   | AAAA | @ | 2606:50c0:8002::153 |
+   | AAAA | @ | 2606:50c0:8003::153 |
    | CNAME | www | fadi137y.github.io |
 
-3. Vul in deze repository onder *Settings → Pages → Custom domain* je domein in
-4. Zet daar ook *Enforce HTTPS* aan
+   De AAAA-regels zijn voor IPv6. Ondersteunt je provider dat niet, laat ze
+   dan weg; de site werkt ook zonder.
 
-Meer hoef je niet te doen: de site rekent zelf uit dat hij dan niet meer in
-een submap staat, en past alle links automatisch aan.
+3. Vul in deze repository onder *Settings → Pages → Custom domain* je domein
+   in en klik op **Save**
+4. Wacht tot de DNS-controle groen is en zet dan *Enforce HTTPS* aan.
+   Het certificaat regelt GitHub gratis, dat duurt meestal een kwartier
+
+Meer hoef je niet te doen. De site staat dan niet meer in een submap, en
+merkt dat zelf: alle links, foto's en de sitemap passen zich automatisch aan.
+De workflow schrijft ook zelf een `CNAME`-bestand mee, zodat GitHub het
+domein niet vergeet bij een volgende publicatie.
+
+DNS-wijzigingen kunnen tot 24 uur duren voor ze overal doorwerken, meestal
+gaat het binnen een uur.
 
 ### Liever Vercel?
 

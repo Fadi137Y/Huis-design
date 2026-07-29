@@ -51,6 +51,26 @@ jobs:
           NEXT_PUBLIC_SITE_URL: ${{ steps.pages.outputs.base_url }}
         run: npm run build
 
+      # Bij publiceren via Actions kan GitHub het ingestelde eigen domein
+      # vergeten als er geen CNAME-bestand in het resultaat zit. Die naam
+      # halen we hier uit de Pages-instellingen, dus er hoeft niets met de
+      # hand te worden bijgehouden. Zolang de site nog op github.io staat
+      # doet deze stap niets.
+      - name: Eigen domein vastleggen
+        env:
+          BASIS_URL: ${{ steps.pages.outputs.base_url }}
+        run: |
+          host="$(printf '%s' "$BASIS_URL" | sed -E 's#^https?://##; s#/.*$##')"
+          case "$host" in
+            *.github.io | "")
+              echo "Geen eigen domein ingesteld; CNAME overgeslagen."
+              ;;
+            *)
+              printf '%s\n' "$host" > out/CNAME
+              echo "CNAME geschreven voor $host"
+              ;;
+          esac
+
       - name: Resultaat klaarzetten
         uses: actions/upload-pages-artifact@v3
         with:
