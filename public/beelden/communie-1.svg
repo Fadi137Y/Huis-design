@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img" preserveAspectRatio="xMidYMid slice">
+  <defs>
+  <radialGradient id="g0" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#C9A876" stop-opacity="0.68"/>
+    <stop offset="100%" stop-color="#C9A876" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="g1" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#C9A876" stop-opacity="0.51"/>
+    <stop offset="100%" stop-color="#C9A876" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="g2" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#5E4630" stop-opacity="0.50"/>
+    <stop offset="100%" stop-color="#5E4630" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="g3" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#5E4630" stop-opacity="0.69"/>
+    <stop offset="100%" stop-color="#5E4630" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="g4" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#9C7A4C" stop-opacity="0.41"/>
+    <stop offset="100%" stop-color="#9C7A4C" stop-opacity="0"/>
+  </radialGradient>
+    <linearGradient id="streep" x1="61%" y1="1%" x2="39%" y2="99%">
+      <stop offset="0%" stop-color="#F6EFE4" stop-opacity="0"/>
+      <stop offset="45%" stop-color="#E4D2B8" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#9C7A4C" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="vignet" cx="50%" cy="45%" r="72%">
+      <stop offset="55%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#241C13" stop-opacity="0.38"/>
+    </radialGradient>
+    <filter id="korrel" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="33" result="ruis"/>
+      <feColorMatrix type="saturate" values="0" in="ruis" result="grijs"/>
+      <feComponentTransfer in="grijs" result="korrel">
+        <feFuncA type="linear" slope="0.16"/>
+      </feComponentTransfer>
+    </filter>
+    <filter id="zacht" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="42"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="900" fill="#F6EFE4"/>
+  <g filter="url(#zacht)">
+  <ellipse cx="806" cy="821" rx="482" ry="504" fill="url(#g0)"/>
+  <ellipse cx="1348" cy="924" rx="834" ry="787" fill="url(#g1)"/>
+  <ellipse cx="515" cy="969" rx="672" ry="507" fill="url(#g2)"/>
+  <ellipse cx="1222" cy="734" rx="790" ry="796" fill="url(#g3)"/>
+  <ellipse cx="1268" cy="515" rx="696" ry="437" fill="url(#g4)"/>
+  </g>
+  <rect width="1200" height="900" fill="url(#streep)"/>
+  <circle cx="1189" cy="60" r="35" fill="#F6EFE4" opacity="0.16"/>
+  <circle cx="615" cy="288" r="35" fill="#F6EFE4" opacity="0.17"/>
+  <circle cx="473" cy="167" r="21" fill="#C9A876" opacity="0.07"/>
+  <circle cx="897" cy="504" r="22" fill="#C9A876" opacity="0.08"/>
+  <circle cx="970" cy="3" r="38" fill="#F6EFE4" opacity="0.12"/>
+  <circle cx="812" cy="350" r="49" fill="#F6EFE4" opacity="0.19"/>
+  <circle cx="647" cy="707" r="32" fill="#C9A876" opacity="0.07"/>
+  <circle cx="456" cy="682" r="35" fill="#E4D2B8" opacity="0.17"/>
+  <circle cx="18" cy="488" r="40" fill="#F6EFE4" opacity="0.11"/>
+  <circle cx="1036" cy="819" r="56" fill="#C9A876" opacity="0.14"/>
+  <circle cx="105" cy="542" r="56" fill="#C9A876" opacity="0.13"/>
+  <circle cx="1136" cy="366" r="42" fill="#E4D2B8" opacity="0.16"/>
+  <circle cx="465" cy="683" r="33" fill="#E4D2B8" opacity="0.21"/>
+  <circle cx="127" cy="167" r="55" fill="#F6EFE4" opacity="0.16"/>
+  <circle cx="1089" cy="155" r="56" fill="#E4D2B8" opacity="0.12"/>
+  <circle cx="521" cy="729" r="68" fill="#E4D2B8" opacity="0.20"/>
+  <circle cx="788" cy="31" r="57" fill="#C9A876" opacity="0.20"/>
+  <circle cx="273" cy="83" r="30" fill="#F6EFE4" opacity="0.15"/>
+  <rect width="1200" height="900" fill="url(#vignet)"/>
+  <rect width="1200" height="900" filter="url(#korrel)" opacity="0.55"/>
+</svg>
