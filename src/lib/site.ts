@@ -14,9 +14,7 @@ export const site = {
   /**
    * WhatsApp-nummer in internationaal formaat, zonder + en zonder spaties.
    * Nederlands 06-nummer: laat de 0 weg en zet er 31 voor.
-   *    06 12 34 56 78  ->  31612345678
-   *
-   * >>> VERVANG DIT DOOR JULLIE ECHTE NUMMER <<<
+   *    06 38 64 70 85  ->  31638647085
    */
   whatsapp: "31638647085",
 
@@ -26,8 +24,11 @@ export const site = {
   /** >>> VERVANG DIT DOOR JULLIE INSTAGRAM-NAAM (zonder @) <<< */
   instagram: "f2studio",
 
-  /** Optioneel: laat leeg ("") om de telefoonknop te verbergen. */
-  telefoon: "+31 6 12 34 56 78",
+  /**
+   * Zoals het nummer op de site komt te staan. Laat leeg ("") om de
+   * telefoonknop te verbergen.
+   */
+  telefoon: "+31 6 38 64 70 85",
 
   /**
    * Domein van de site, gebruikt voor SEO en deelbare links.
