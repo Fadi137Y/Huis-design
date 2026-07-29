@@ -7,12 +7,14 @@
 <meta name="robots" content="noindex">
 <!-- Wie hier belandt zonder taal in de link, gaat door naar het Nederlands.
      Staat de browser op Arabisch, dan sturen we door naar de Arabische versie. -->
-<link rel="canonical" href="/nl/">
-<meta http-equiv="refresh" content="0; url=/nl/">
+<!-- Bewust zonder schuine streep vooraan: zo werkt het zowel op een eigen
+     domein als in een submap, bijvoorbeeld op GitHub Pages. -->
+<link rel="canonical" href="nl/">
+<meta http-equiv="refresh" content="0; url=nl/">
 <script>
   (function () {
     var taal = (navigator.language || "nl").toLowerCase();
-    window.location.replace(taal.indexOf("ar") === 0 ? "/ar/" : "/nl/");
+    window.location.replace(taal.indexOf("ar") === 0 ? "ar/" : "nl/");
   })();
 </script>
 <style>
@@ -32,8 +34,8 @@
 </head>
 <body>
   <p>
-    Ga verder naar <a href="/nl/">Nederlands</a> &middot;
-    <a href="/ar/">العربية</a>
+    Ga verder naar <a href="nl/">Nederlands</a> &middot;
+    <a href="ar/">العربية</a>
   </p>
 </body>
 </html>

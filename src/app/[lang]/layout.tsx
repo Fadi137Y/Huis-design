@@ -13,6 +13,7 @@ import {
   talen,
   type Taal,
 } from "@/lib/i18n";
+import { bestand } from "@/lib/pad";
 import { site } from "@/lib/site";
 
 /* ---------- Lettertypen ---------- */
@@ -77,7 +78,7 @@ export async function generateMetadata({
       siteName: "F2studio",
     },
     icons: {
-      icon: [{ url: "/merk.svg", type: "image/svg+xml" }],
+      icon: [{ url: bestand("/merk.svg"), type: "image/svg+xml" }],
     },
   };
 }

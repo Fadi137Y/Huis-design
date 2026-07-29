@@ -1,0 +1,69 @@
+name: Publiceer de site
+
+# Bouwt de site en zet hem online via GitHub Pages.
+# Draait automatisch bij elke wijziging, en kan met de hand worden
+# gestart via het tabblad Actions ("Run workflow").
+
+on:
+  push:
+    branches:
+      - main
+      - claude/vsco-style-reference-o1mcb6
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Nooit twee publicaties tegelijk, en een lopende publicatie afmaken.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  bouwen:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code ophalen
+        uses: actions/checkout@v4
+
+      - name: Node installeren
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Pages instellen
+        id: pages
+        uses: actions/configure-pages@v5
+        with:
+          # Zet GitHub Pages aan als dat nog niet gedaan is.
+          enablement: true
+
+      - name: Pakketten installeren
+        run: npm ci
+
+      - name: Site bouwen
+        env:
+          # Op een eigen domein zijn deze leeg; op github.io staat de site
+          # in een submap. configure-pages vult de juiste waarden in.
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          NEXT_PUBLIC_SITE_URL: ${{ steps.pages.outputs.base_url }}
+        run: npm run build
+
+      - name: Resultaat klaarzetten
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
+  publiceren:
+    needs: bouwen
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.publicatie.outputs.page_url }}
+    steps:
+      - name: Online zetten
+        id: publicatie
+        uses: actions/deploy-pages@v4

@@ -29,8 +29,12 @@ export const site = {
   /** Optioneel: laat leeg ("") om de telefoonknop te verbergen. */
   telefoon: "+31 6 12 34 56 78",
 
-  /** Domein van de site. Wordt gebruikt voor SEO en deelbare links. */
-  url: "https://f2studio.nl",
+  /**
+   * Domein van de site, gebruikt voor SEO en deelbare links.
+   * Bij het publiceren wordt dit automatisch ingevuld; het adres
+   * hieronder is de terugval voor als dat niet gebeurt.
+   */
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://f2studio.nl",
 } as const;
 
 /** Bouwt een WhatsApp-link met een kant-en-klaar bericht. */

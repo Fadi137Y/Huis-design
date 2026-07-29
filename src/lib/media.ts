@@ -18,6 +18,8 @@
  * ============================================================
  */
 
+import { bestand } from "./pad";
+
 export type Beeld = {
   src: string;
   alt: string;
@@ -26,12 +28,14 @@ export type Beeld = {
   ratio: number;
 };
 
+// bestand() zorgt dat de paden ook kloppen als de site in een submap
+// staat, zoals op GitHub Pages.
 const b = (
   src: string,
   ratio: number,
   alt: string,
   prompt: string,
-): Beeld => ({ src, ratio, alt, prompt });
+): Beeld => ({ src: bestand(src), ratio, alt, prompt });
 
 export const beelden = {
   hero: b(

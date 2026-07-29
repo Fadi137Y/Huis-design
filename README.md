@@ -82,26 +82,38 @@ in je browser.
 
 ---
 
-## De site online zetten
+## De site online
 
-De site wordt geëxporteerd naar losse bestanden, dus je hebt geen server nodig.
+De site staat live op GitHub Pages en publiceert zichzelf. Elke keer dat er
+iets wijzigt, bouwt GitHub de site opnieuw en zet hem online. Dat regelt
+`.github/workflows/publiceer.yml`.
 
-```bash
-npm run build
-```
+Je kunt de publicatie volgen op het tabblad **Actions** van deze repository.
+Daar kun je hem ook met de hand starten via *Run workflow*.
 
-Alles komt in de map `out/` te staan. Die map kun je uploaden naar elke
-hosting. Twee gratis opties:
+### Een eigen domein koppelen
 
-**Vercel** (makkelijkst) — ga naar [vercel.com](https://vercel.com), koppel
-deze GitHub-repository, en Vercel bouwt en publiceert automatisch bij elke
-wijziging.
+1. Koop een domein (bijvoorbeeld `f2studio.nl`)
+2. Zet bij je domeinprovider deze DNS-regels klaar:
 
-**GitHub Pages** — zet in de repository-instellingen onder *Pages* de bron op
-GitHub Actions. Werkt ook, maar vraagt iets meer instelwerk.
+   | Type | Naam | Waarde |
+   |---|---|---|
+   | A | @ | 185.199.108.153 |
+   | A | @ | 185.199.109.153 |
+   | A | @ | 185.199.110.153 |
+   | A | @ | 185.199.111.153 |
+   | CNAME | www | fadi137y.github.io |
 
-Vergeet niet je eigen domein te koppelen en `url` in `src/lib/site.ts` aan te
-passen naar dat domein.
+3. Vul in deze repository onder *Settings → Pages → Custom domain* je domein in
+4. Zet daar ook *Enforce HTTPS* aan
+
+Meer hoef je niet te doen: de site rekent zelf uit dat hij dan niet meer in
+een submap staat, en past alle links automatisch aan.
+
+### Liever Vercel?
+
+Kan ook. Ga naar [vercel.com](https://vercel.com), koppel deze repository en
+Vercel doet de rest. Laat de instelling `NEXT_PUBLIC_BASE_PATH` dan leeg.
 
 ---
 
