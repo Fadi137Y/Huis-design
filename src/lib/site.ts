@@ -18,7 +18,7 @@ export const site = {
    *
    * >>> VERVANG DIT DOOR JULLIE ECHTE NUMMER <<<
    */
-  whatsapp: "31612345678",
+  whatsapp: "31638647085",
 
   /** >>> VERVANG DIT DOOR JULLIE ECHTE E-MAILADRES <<< */
   email: "info@f2studio.nl",
